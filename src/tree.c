@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 #include "tree.h"
+#include "queue.h"
 
 struct tree_node *create_tree_from_array(int arr[], int n, int i) {
     if (i >= n || arr[i] == 0) return NULL;
@@ -43,3 +44,19 @@ void tree_traverse_in_order(struct tree_node *node) {
     printf("%d\n", node->value);
     tree_traverse_in_order(node->right);
 }
+
+void tree_traverse_breadth_first(struct tree_node *node) {
+    struct queue *queue = create_queue();
+
+    enqueue(queue, node);
+
+    while (!is_queue_empty(queue)) {
+        struct tree_node *tn = dequeue(queue);
+
+        if (tn->left != NULL) enqueue(queue, tn->left);
+        if (tn->right != NULL) enqueue(queue, tn->right);
+    }
+}
+
+
+

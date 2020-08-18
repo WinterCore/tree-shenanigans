@@ -13,7 +13,7 @@ bin/main.o: src/main.c bin/tree.o
 bin/tree.o: src/tree.c src/tree.h bin/queue.o
 	$(CC) $(CFLAGS) -c src/tree.c -o bin/tree.o
 
-queue.o: queue.c queue.h
+bin/queue.o: src/queue.c src/queue.h
 	$(CC) $(CFLAGS) -c src/queue.c -o bin/queue.o
 
 clean:

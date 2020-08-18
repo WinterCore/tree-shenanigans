@@ -1,8 +1,10 @@
 #ifndef QUEUE_H
 #define QUEUE_H
 
+#include <stdbool.h>
+
 struct queue_node {
-    int value;
+    void *value;
     struct queue_node *next;
 };
 
@@ -12,9 +14,11 @@ struct queue {
 };
 
 struct queue *create_queue();
+struct queue *create_queue_from_array();
 
-void enqueue(struct queue *queue, int value);
-int dequeue(struct queue *queue);
-int peek(struct queue *queue);
+void enqueue(struct queue *queue, void *value);
+void *dequeue(struct queue *queue);
+void *queue_peek(struct queue *queue);
+bool is_queue_empty(struct queue *queue);
 
 #endif
