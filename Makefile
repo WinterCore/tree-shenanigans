@@ -8,7 +8,7 @@ debug: main
 main: bin/main.o bin/tree.o bin/queue.o bin/min-heap.o
 	$(CC) $(CFLAGS) -o bin/main bin/main.o bin/tree.o bin/queue.o bin/min-heap.o
 
-bin/main.o: src/main.c bin/tree.o
+bin/main.o: src/main.c bin/tree.o bin/min-heap.o bin/queue.o
 	$(CC) $(CFLAGS) -c src/main.c -o bin/main.o
 
 bin/tree.o: src/tree.c src/tree.h bin/queue.o

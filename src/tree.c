@@ -53,6 +53,8 @@ void tree_traverse_breadth_first(struct tree_node *node) {
     while (!is_queue_empty(queue)) {
         struct tree_node *tn = dequeue(queue);
 
+        printf("%d\n", tn->value);
+
         if (tn->left != NULL) enqueue(queue, tn->left);
         if (tn->right != NULL) enqueue(queue, tn->right);
     }

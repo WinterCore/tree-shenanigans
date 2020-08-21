@@ -2,15 +2,28 @@
 
 #include "tree.h"
 #include "queue.h"
+#include "min-heap.h"
 
 int main() {
     int arr[] = {10, 1, 2, 3, 4, 5, 6};
     int n     = sizeof(arr) / sizeof(arr[0]);
 
-    struct tree_node *node = create_tree_from_array(arr, n, 0);
+    // struct tree_node *node = create_tree_from_array(arr, n, 0);
 
-    tree_traverse_breadth_first(node);
+    // tree_traverse_breadth_first(node);
 
+
+    struct heap *heap = min_heap_create();
+
+    min_heap_insert(heap, 10);
+    min_heap_insert(heap, 5);
+    min_heap_insert(heap, 2);
+    min_heap_insert(heap, 1);
+
+    printf("%d\n", min_heap_extract(heap));
+    printf("%d\n", heap->head->value);
+    printf("%d\n", heap->head->left->value);
+    printf("%d\n", heap->head->right->value);
 
     return 0;
 }
