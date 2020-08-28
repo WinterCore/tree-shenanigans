@@ -35,6 +35,10 @@ int main() {
     arr_min_heap_insert(heap, 1);
     arr_min_heap_insert(heap, 1);
     arr_min_heap_insert(heap, 1);
+    printf("%d\n", arr_min_heap_extract(heap));
+    printf("%d\n", arr_min_heap_extract(heap));
+    printf("%d\n", arr_min_heap_extract(heap));
+    printf("%d\n", arr_min_heap_extract(heap));
 
     for (int i = 0; i < heap->size; i += 1) {
         printf("%d - ", heap->arr[i]);
